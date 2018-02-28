@@ -63,16 +63,20 @@ Action()
 				"Mode=HTML", 
 				LAST); 
 
-			lr_log_message("%d : WATING %s sec...",sequence,lr_eval_string("{ttl}"));
-			sequence++;
-			sleep(atoi(lr_eval_string("{ttl}"))*1000); 
+			// wating code : 201
+			if(strcmp("201",lr_eval_string("{retval}")) == 0){ 
+				sequence++;
+				lr_error_message("============== %d : WATING %s sec...",sequence,lr_eval_string("{ttl}"));
+				sleep(atoi(lr_eval_string("{ttl}"))*1000); 
+			}
 		}else{  
-			// call success page...
-
+			// pass code : 201 , error code : 5xx
 			lr_log_message("RETVAL : %s",lr_eval_string("{retval}"));
 			success=1;
 		} 
-	}while(success == 0); 
+	}while(success == 0);  
+		// Call success page...
+	
 		// NetFunnel_Complete
 		web_url("NetFunnel_Complete",
 			"URL=http://nf2.netfunnel.co.kr/ts.wseq?opcode=5004&key={key}", 
