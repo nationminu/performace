@@ -59,7 +59,7 @@ Action()
 				"Resource=0", 
 				"RecContentType=text/html", 
 				"Referer=", 
-				"Snapshot=t1.inf", 
+				"Snapshot=t2.inf", 
 				"Mode=HTML", 
 				LAST); 
 
@@ -83,7 +83,7 @@ Action()
 			"Resource=0", 
 			"RecContentType=text/html", 
 			"Referer=", 
-			"Snapshot=t1.inf", 
+			"Snapshot=t3.inf", 
 			"Mode=HTML", 
 			LAST);   
 	
